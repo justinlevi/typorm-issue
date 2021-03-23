@@ -25,6 +25,10 @@ export class Group extends BaseEntity {
   @Column("text")
   type: string;
 
+  @Field({ nullable: true })
+  @Column("text", { nullable: true })
+  asdfa?: string;
+
   @Field((type) => [Project])
   @ManyToMany((type) => Project, (project) => project.groups, { lazy: true })
   projects: Project[];
